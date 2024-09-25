@@ -17,11 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AdminLogin extends AppCompatActivity {
 
-    // Define UI elements
     private EditText etAdminId, etLicenseNumber, etPassword;
     private Button btnLogin;
-
-    // Firebase reference
     private DatabaseReference databaseReference;
 
     // SharedPreferences for tracking login attempts
@@ -35,16 +32,12 @@ public class AdminLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_login);
 
-        // Initialize Firebase Database reference
         databaseReference = FirebaseDatabase.getInstance().getReference("admins");
-
-        // Link UI elements
         etAdminId = findViewById(R.id.etAdminId);
         etLicenseNumber = findViewById(R.id.etLicenseNumber);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
-        // Initialize SharedPreferences
         sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
 
         // Check login attempts
@@ -53,7 +46,6 @@ public class AdminLogin extends AppCompatActivity {
             disableLoginButton();
         }
 
-        // Set OnClickListener for Login Button
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,12 +56,10 @@ public class AdminLogin extends AppCompatActivity {
 
     // Method to check admin details from Firebase
     private void checkAdminDetails() {
-        // Fetch input from EditText fields
         String adminId = etAdminId.getText().toString().trim();
         String licenseNumberStr = etLicenseNumber.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
-        // Input validation
         if (TextUtils.isEmpty(adminId)) {
             etAdminId.setError("Admin ID is required");
             return;
@@ -116,7 +106,7 @@ public class AdminLogin extends AppCompatActivity {
         });
     }
 
-    // Method to increment login attempts and disable the button if max attempts reached
+    // Increment login attempts and disable the button if max attempts reached
     private void incrementLoginAttempts() {
         int attemptCount = sharedPreferences.getInt(ATTEMPT_COUNT, 0);
         attemptCount++;
@@ -129,13 +119,13 @@ public class AdminLogin extends AppCompatActivity {
         }
     }
 
-    // Method to disable the login button
+    // Disable the login button
     private void disableLoginButton() {
         btnLogin.setEnabled(false);
         Toast.makeText(this, "Too many unsuccessful attempts. Login disabled.", Toast.LENGTH_SHORT).show();
     }
 
-    // Method to reset login attempts after a successful login
+    // Reset login attempts after a successful login
     private void resetLoginAttempts() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(ATTEMPT_COUNT, 0);

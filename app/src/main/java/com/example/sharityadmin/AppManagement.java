@@ -8,7 +8,7 @@ public class AppManagement extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_login);
+        setContentView(R.layout.app_management);
     }
 
 }
