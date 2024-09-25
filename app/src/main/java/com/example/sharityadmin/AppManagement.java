@@ -40,7 +40,11 @@ public class AppManagement extends AppCompatActivity {
         btnAddUser.setOnClickListener(v -> {
             Intent intent = new Intent(this, AddUser.class);
             startActivity(intent);
-            finish();
+        });
+
+        btnAddCharity.setOnClickListener(v -> {
+            Intent intent = new Intent(this, AddCharity.class);
+            startActivity(intent);
         });
 
         btnRemoveUser.setOnClickListener(v -> showRemoveUserPopup("user"));
@@ -49,6 +53,7 @@ public class AppManagement extends AppCompatActivity {
             Intent intent = new Intent(this, AdminLogin.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clears the activity stack
             startActivity(intent);
+            finish();
         });
     }
 
