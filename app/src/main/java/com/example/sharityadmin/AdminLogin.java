@@ -1,7 +1,6 @@
 package com.example.sharityadmin;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -87,6 +90,8 @@ public class AdminLogin extends AppCompatActivity {
                         // Successful login
                         Toast.makeText(AdminLogin.this, "Login successful!", Toast.LENGTH_SHORT).show();
                         resetLoginAttempts();
+                        // Move to AppManagement activity
+                        moveToAppManagement();
                     } else {
                         // Unsuccessful login attempt
                         incrementLoginAttempts();
@@ -130,5 +135,12 @@ public class AdminLogin extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(ATTEMPT_COUNT, 0);
         editor.apply();
+    }
+
+    // Navigate to AppManagement activity
+    private void moveToAppManagement() {
+        Intent intent = new Intent(AdminLogin.this, AppManagement.class);
+        startActivity(intent);
+        finish();  // Optionally finish the login activity so the user cannot go back to it
     }
 }
