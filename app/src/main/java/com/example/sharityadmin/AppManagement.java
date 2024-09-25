@@ -18,7 +18,6 @@ public class AppManagement extends AppCompatActivity {
 
     private TextView tvWelcomeAdmin;
     private Button btnAddUser, btnAddCharity, btnRemoveUser, btnRemoveCharity;
-    private Button btnDoneeApproval, btnCharityApproval, btnViewCharityReports;
     private Button btnViewProfileRequests, btnLogout;
 
     @Override
@@ -31,9 +30,6 @@ public class AppManagement extends AppCompatActivity {
         btnAddCharity = findViewById(R.id.btnAddCharity);
         btnRemoveUser = findViewById(R.id.btnRemoveUser);
         btnRemoveCharity = findViewById(R.id.btnRemoveCharity);
-        btnDoneeApproval = findViewById(R.id.btnDoneeApproval);
-        btnCharityApproval = findViewById(R.id.btnCharityApproval);
-        btnViewCharityReports = findViewById(R.id.btnViewCharityReports);
         btnViewProfileRequests = findViewById(R.id.btnViewProfileRequests);
         btnLogout = findViewById(R.id.btnLogout);
 
