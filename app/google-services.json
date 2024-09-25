@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "363729168709",
+    "firebase_url": "https://sharity-5e06e-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "sharity-5e06e",
+    "storage_bucket": "sharity-5e06e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363729168709:android:9af3d3633d488776f3362c",
+        "android_client_info": {
+          "package_name": "com.example.sharityadmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiYlQlpoUCULj84-aABYTd5tbZwLdLv-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363729168709:android:8d8c9fa1fdcb77c2f3362c",
+        "android_client_info": {
+          "package_name": "com.test.sharity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiYlQlpoUCULj84-aABYTd5tbZwLdLv-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
